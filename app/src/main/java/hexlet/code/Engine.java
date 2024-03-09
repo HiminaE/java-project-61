@@ -3,6 +3,7 @@ package hexlet.code;
 public class Engine {
     public static void start(int number) {
         String name = Cli.hello();
+
         int[] k = {1, 2, 3};
         String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?"};
         String[] ans = new String[2];

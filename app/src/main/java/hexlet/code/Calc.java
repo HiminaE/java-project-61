@@ -1,6 +1,7 @@
 package hexlet.code;
 import java.util.Scanner;
 import java.util.Random;
+
 public class Calc {
     public static String[] startGame() {
         Scanner scanner = new Scanner(System.in);
