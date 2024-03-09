@@ -4,21 +4,22 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
+        System.out.println("2 - Even");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         int input = scanner.nextInt();
         if (input == 1) {
-            System.out.println();
-            System.out.println("Welcome to the Brain Games!");
+            Cli.hello();
+        } else if (input == 2) {
+            Even.startGame();
 
-            System.out.println("May I have your name?");
-            String name = scanner.nextLine();
-            System.out.println("Hello, " + name);
         }
+
 
 //        make run-dist
 //        Please enter the game number and press Enter.
