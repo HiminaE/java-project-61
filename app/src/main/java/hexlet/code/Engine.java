@@ -5,7 +5,7 @@ public class Engine {
         String name = Cli.hello();
 
         int[] k = {1, 2, 3};
-        String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?", "Find the greatest common divisor of given numbers.","What number is missing in the progression?"};
+        String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?", "Find the greatest common divisor of given numbers.","What number is missing in the progression?","Answer 'yes' if the number is even, otherwise answer 'no'."};
         String[] ans = new String[2];
         System.out.println(startText[number]);
         if (number > 1) {
@@ -24,11 +24,14 @@ public class Engine {
                     case 5:
                         ans = Progression.startGame();
                         break;
+                    case 6:
+                        ans = Prime.startGame();
+                        break;
                 }
                 if ((ans[0]).equals(ans[1])) {
                     System.out.println("Correct!");
                 } else {
-                    System.out.println(ans[0] + " is wrong answer ;(. Correct answer was " + ans[1] + ".");
+                    System.out.println("'" + ans[0] + "'" + " is wrong answer ;(. Correct answer was " + "'" + ans[1] + "'" + ".");
                     System.out.println("Let's try again, " + name + "!");
                     return;
                 }
