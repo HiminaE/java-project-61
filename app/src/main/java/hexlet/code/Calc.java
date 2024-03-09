@@ -9,7 +9,7 @@ public class Calc {
         Random r = new Random();
         String[] rez = new String[2];
 
-        System.out.println();
+        //System.out.println();
 
         int number1 = (r.nextInt(100) + 1);
         int number2 = (r.nextInt(100) + 1);
