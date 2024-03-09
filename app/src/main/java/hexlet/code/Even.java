@@ -6,35 +6,21 @@ import java.util.Scanner;
 
 public class Even {
 
-    public static void startGame() {
+    public static String[] startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name);
-        int[] k = {1,2,3};
-        for (var i : k ) {
-            System.out.println();
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            int number = (r.nextInt(6) + 1);
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-
-            String input = scanner.next();
-
-            if (((number % 2) == 0) && (input.equals("yes")) || (((number % 2) != 0) && (input.equals("no")))) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + name + "!");
-                return;     // прерывается весь  метод startGame()
-            }
+        String[] rez = new String[2];
+        int number = (r.nextInt(100) + 1);
+        System.out.println("Question: " + number);
+        System.out.print("Your answer: ");
+        String input = scanner.next();
+        rez[0] = input;
+        if (number % 2 == 0) {
+            rez[1] = "yes";
+        } else {
+            rez[1] = "no";
         }
-
-        System.out.println();
-        System.out.println("Congratulations, " + name + "!");
+        return rez;
 
     }
 
