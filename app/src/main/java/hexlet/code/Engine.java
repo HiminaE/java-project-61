@@ -5,7 +5,7 @@ public class Engine {
         String name = Cli.hello();
 
         int[] k = {1, 2, 3};
-        String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?"};
+        String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?", "Find the greatest common divisor of given numbers."};
         String[] ans = new String[2];
         System.out.println(startText[number]);
         if (number > 1) {
@@ -18,6 +18,9 @@ public class Engine {
                     case 3:
                         ans = Calc.startGame();
                         break;
+                    case 4:
+                        ans = Gcd.startGame();
+                        break;
                 }
                 if ((ans[0]).equals(ans[1])) {
                     System.out.println("Correct!");
@@ -27,6 +30,8 @@ public class Engine {
                     return;
                 }
             }
+            System.out.println();
+            System.out.println("Congratulations, " + name + "!");
         } else {
             return;
         }
