@@ -19,7 +19,7 @@ public class App {
         int input = scanner.nextInt();
         String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?", "Find the greatest common divisor of given numbers.","What number is missing in the progression?","Answer 'yes' if the number is even, otherwise answer 'no'."};
         String[][] ans = new String[3][2];
-        System.out.println(startText[input]);
+
         if ((input > 0) && (input < 7) ) {
             switch (input) {
                 case 1:
@@ -41,8 +41,11 @@ public class App {
                     ans = Prime.startGame();
                     break;
             }
+        } else {
+            return;
         }
-        //Engine.start(input);
+        System.out.println(startText[input]);
+        Engine.start(ans);
         return;
     }
 }
