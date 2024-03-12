@@ -17,20 +17,22 @@ public class Prime {
             return false;
         }
     }
-    public static String[] startGame() {
+    public static String[][] startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
-        String[] rez = new String[2];
-        int number = (r.nextInt(100) + 1);
-        System.out.println("Question: " + number);
-        System.out.print("Your answer: ");
-        String input = scanner.next();
-        rez[0] = input;
-        if (prime(number)) {
-            rez[1] = "yes";
-        } else {
-            rez[1] = "no";
+        String[][] ans = new String[3][2];
+        int[] k = {0, 1, 2};
+
+        for (var i : k) {
+            int number = (r.nextInt(100) + 1);
+            ans[0][i] = Integer.toString(number);
+
+            if (prime(number)) {
+                ans[1][i] = "yes";
+            } else {
+                ans[1][i] = "no";
+            }
         }
-        return rez;
+        return ans;
     }
 }

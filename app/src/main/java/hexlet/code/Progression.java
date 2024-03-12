@@ -5,32 +5,30 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Progression {
-    public static String[] startGame() {
+    public static String[][] startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
-        String[] rez = new String[2];
-        int quantity = 10;
-        String[] progres = new String[quantity];
+        String[][] ans = new String[3][2];
+        int[] k = {0, 1, 2};
 
-        //System.out.println();
+        for (var i : k) {
 
-        int pos = r.nextInt(10);
-        int el = r.nextInt(20);
+            int quantity = 10;
+            String[] progres = new String[quantity];
+            int pos = r.nextInt(10);
+            int el = r.nextInt(20);
 
-        for (var i = 0; i < quantity; i++) {
-            if (i == pos) {
-                progres[i] = "..";
-                rez[1] = Character.toString(el);
-            } else {
-                progres[i] = Integer.toString(el);
+            for (var j = 0; j < quantity; j++) {
+                if (j == pos) {
+                    progres[j] = "..";
+                    ans[1][i] = Character.toString(el);
+                } else {
+                    progres[j] = Integer.toString(el);
+                }
+                el += pos;
             }
-            el += pos;
+            ans[0][i] = Arrays.toString(progres);
         }
-        System.out.print("Question: ");
-        System.out.println(Arrays.toString(progres));
-        System.out.print("Your answer: ");
-        int input = scanner.nextInt();
-        rez[0] = Integer.toString(input);
-        return rez;
+        return ans;
     }
 }

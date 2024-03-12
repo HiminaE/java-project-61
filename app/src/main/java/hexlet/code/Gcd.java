@@ -13,21 +13,20 @@ public class Gcd {
         }
         return x;
     }
-    public static String[] startGame() {
+    public static String[][] startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
-        String[] rez = new String[2];
+        String[][] ans = new String[3][2];
+        int[] k = {0, 1, 2};
 
-        System.out.println();
+        for (var i : k) {
 
-        int number1 = (r.nextInt(50) + 1);
-        int number2 = (r.nextInt(50) + 1);
-        System.out.println("Question: " + number1 + " " + number2);
-        System.out.print("Your answer: ");
-        int input = scanner.nextInt();
-        rez[0] = Character.toString(input);
-        rez[1] = Character.toString(gcd(number1,number2));
-        return rez;
+            int number1 = (r.nextInt(50) + 1);
+            int number2 = (r.nextInt(50) + 1);
+            ans[0][i] = Integer.toString( number1) + " " + Integer.toString(number2);
+            ans[1][i] = Integer.toString(gcd(number1, number2));
+        }
+        return ans;
     }
 
 }

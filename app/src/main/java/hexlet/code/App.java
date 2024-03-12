@@ -17,7 +17,32 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         int input = scanner.nextInt();
-        Engine.start(input);
-
+        String[] startText = {"", "", "Answer 'yes' if the number is even, otherwise answer 'no'.", "What is the result of the expression?", "Find the greatest common divisor of given numbers.","What number is missing in the progression?","Answer 'yes' if the number is even, otherwise answer 'no'."};
+        String[][] ans = new String[3][2];
+        System.out.println(startText[input]);
+        if ((input > 0) && (input < 7) ) {
+            switch (input) {
+                case 1:
+                    Cli.hello();
+                    break;
+                case 2:
+                    ans = Even.startGame();
+                    break;
+                case 3:
+                    ans = Calc.startGame();
+                    break;
+                case 4:
+                    ans = Gcd.startGame();
+                    break;
+                case 5:
+                    ans = Progression.startGame();
+                    break;
+                case 6:
+                    ans = Prime.startGame();
+                    break;
+            }
+        }
+        //Engine.start(input);
+        return;
     }
 }
