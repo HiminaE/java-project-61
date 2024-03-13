@@ -5,6 +5,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/aca98fde42b92fcc3afa/maintainability)](https://codeclimate.com/github/HiminaE/java-project-61/maintainability)
 
 The first project, "Mind Games", consists of five games.
+## Start Project
+... bash
+run-dist
+...
 
 Screenshots of the games:
 
