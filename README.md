@@ -10,7 +10,7 @@ The first project, "Mind Games", consists of five games.
 make run-dist
 
 
-Screenshots of the games:
+## Screenshots of the games:
 
 ### Link to the screenshot gameEven
 [![Link to the screenshot Even](https://drive.google.com/file/d/1_RZMT463A-CTsbIKhyKCKXbDUTUigHe4/view?usp=sharing)](https://drive.google.com/file/d/1_RZMT463A-CTsbIKhyKCKXbDUTUigHe4/view?usp=sharing)
