@@ -5,10 +5,11 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Progression {
-    public static String[][] startGame() {
+    public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
         String[][] ans = new String[3][2];
+        String description = "What number is missing in the progression?";
         int[] k = {0, 1, 2};
 
         for (var i : k) {
@@ -29,6 +30,6 @@ public class Progression {
             }
             ans[0][i] = Arrays.toString(progres);
         }
-        return ans;
+        Engine.start(description, ans);
     }
 }

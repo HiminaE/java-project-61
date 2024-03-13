@@ -13,10 +13,11 @@ public class Gcd {
         }
         return x;
     }
-    public static String[][] startGame() {
+    public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
         String[][] ans = new String[3][2];
+        String description = "Find the greatest common divisor of given numbers.";
         int[] k = {0, 1, 2};
 
         for (var i : k) {
@@ -26,7 +27,6 @@ public class Gcd {
             ans[0][i] = Integer.toString( number1) + " " + Integer.toString(number2);
             ans[1][i] = Integer.toString(gcd(number1, number2));
         }
-        return ans;
+        Engine.start(description, ans);
     }
-
 }

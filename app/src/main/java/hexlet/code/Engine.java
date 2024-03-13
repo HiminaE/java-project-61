@@ -4,8 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static void start(String[][] ans) {
+    public static void start(String description, String[][] ans) {
+
         String name = Cli.hello();
+        System.out.println(description);
         Scanner scanner = new Scanner(System.in);
         int[] k = {0, 1, 2};
         for (var i : k) {

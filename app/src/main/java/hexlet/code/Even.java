@@ -6,11 +6,12 @@ import java.util.Scanner;
 
 public class Even {
 
-    public static String[][] startGame() {
+    public static void startGame() {
 
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
         String[][] ans = new String[3][2];
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         int[] k = {0, 1, 2};
 
         for (var i : k) {
@@ -22,6 +23,6 @@ public class Even {
                 ans[1][i] = "no";
             }
         }
-        return ans;
+        Engine.start(description, ans);
     }
 }

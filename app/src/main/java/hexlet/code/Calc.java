@@ -4,11 +4,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Calc {
-    public static String[][] startGame() {
+    public static void startGame() {
 
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();
         String[][] ans = new String[3][2];
+        String description = "What is the result of the expression?";
         int[] k = {0, 1, 2};
 
         for (var i : k) {
@@ -29,6 +30,6 @@ public class Calc {
             }
             ans[1][i] = Integer.toString(rez);
         }
-        return ans;
+        Engine.start(description, ans);
     }
 }
