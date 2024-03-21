@@ -1,10 +1,13 @@
-package hexlet.code;
+package hexlet.code.game;
+
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    public static Boolean prime(int x) {
+    public static Boolean isPrime(int x) {
         int k = 0;
         for (var i = 2; i < x; i++) {
             if (x%i == 0) {
@@ -19,21 +22,20 @@ public class Prime {
     }
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
-        Random r = new Random();
-        String[][] ans = new String[3][2];
+        String[][] answers = new String[3][2];
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         int[] k = {0, 1, 2};
 
         for (var i : k) {
-            int number = (r.nextInt(100) + 1);
-            ans[0][i] = Integer.toString(number);
+            int number = Utils.generateNumber(1,100);
+            answers[i][0] = Integer.toString(number);
 
-            if (prime(number)) {
-                ans[1][i] = "yes";
+            if (isPrime(number)) {
+                answers[i][1] = "yes";
             } else {
-                ans[1][i] = "no";
+                answers[i][1] = "no";
             }
         }
-        Engine.start(description, ans);
+        Engine.start(description, answers);
     }
 }

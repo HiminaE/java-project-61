@@ -6,8 +6,9 @@
 
 The first project, "Mind Games", consists of five games.
 ## Start Project
-
+```bash
 make run-dist
+```
 
 
 ## Screenshots of the games:

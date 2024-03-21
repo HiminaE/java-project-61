@@ -4,20 +4,20 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static void start(String description, String[][] ans) {
+    public static void start(String description, String[][] answers) {
 
         String name = Cli.hello();
         System.out.println(description);
         Scanner scanner = new Scanner(System.in);
         int[] k = {0, 1, 2};
         for (var i : k) {
-            System.out.println("Question: " + ans[0][i]);
+            System.out.println("Question: " + answers[i][0]);
             System.out.print("Your answer: ");
-            String rez = scanner.next();
-            if (rez.equals(ans[1][i])) {
+            String rezult = scanner.next();
+            if (rezult.equals(answers[i][1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + rez + "'" + " is wrong answer ;(. Correct answer was " + "'" + ans[1][i] + "'" + ".");
+                System.out.println("'" + rezult + "'" + " is wrong answer ;(. Correct answer was " + "'" + answers[i][1] + "'" + ".");
                 System.out.println("Let's try again, " + name + "!");
                 return;
             }

@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.game.*;
+
 import java.util.Scanner;
 
 public class App {
@@ -13,34 +15,33 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
-        System.out.println("5 - Prime");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         int input = scanner.nextInt();
 
-        if ((input > 0) && (input < 7) ) {
-            switch (input) {
-                case 1:
-                    Cli.hello();
-                    break;
-                case 2:
-                    Even.startGame();
-                    break;
-                case 3:
-                    Calc.startGame();
-                    break;
-                case 4:
-                    Gcd.startGame();
-                    break;
-                case 5:
-                    Progression.startGame();
-                    break;
-                case 6:
-                    Prime.startGame();
-                    break;
-            }
-        } else {
-            return;
+        switch (input) {
+            case 1:
+                Cli.hello();
+                break;
+            case 2:
+                Even.startGame();
+                break;
+            case 3:
+                Calc.startGame();
+                break;
+            case 4:
+                Gcd.startGame();
+                break;
+            case 5:
+                Progression.startGame();
+                break;
+            case 6:
+                Prime.startGame();
+                break;
+            default:
+                System.out.println("Input error!!!");
+                break;
         }
     }
 }
