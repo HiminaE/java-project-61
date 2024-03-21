@@ -7,26 +7,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    public static Boolean isPrime(int x) {
-        int k = 0;
-        for (var i = 2; i < x; i++) {
-            if (x%i == 0) {
-                k = k + 1;
-            }
-        }
-        if (k == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String[][] answers = new String[3][2];
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        int[] k = {0, 1, 2};
 
-        for (var i : k) {
+        for (var i = 0; i < Engine.ROUNDS; i++) {
             int number = Utils.generateNumber(1,100);
             answers[i][0] = Integer.toString(number);
 
@@ -37,5 +24,14 @@ public class Prime {
             }
         }
         Engine.start(description, answers);
+    }
+    public static Boolean isPrime(int number) {
+        int count = 0;
+        for (var i = 2; i < number; i++) {
+            if (number % i == 0) {
+                count++;
+            }
+        }
+        return (count == 0);
     }
 }

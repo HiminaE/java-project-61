@@ -6,23 +6,13 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Gcd {
-    public static int gcd(int x, int y) {
-        while (x != y) {
-            if (x > y) {
-                x = x - y;
-            } else {
-                y = y - x;
-            }
-        }
-        return x;
-    }
+
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String[][] answers = new String[3][2];
         String description = "Find the greatest common divisor of given numbers.";
-        int[] k = {0, 1, 2};
 
-        for (var i : k) {
+        for (var i = 0; i < Engine.ROUNDS; i++) {
 
             int number1 = Utils.generateNumber(1,50);
             int number2 = Utils.generateNumber(1,50);
@@ -30,5 +20,15 @@ public class Gcd {
             answers[i][1] = Integer.toString(gcd(number1, number2));
         }
         Engine.start(description, answers);
+    }
+    public static int gcd(int number1, int number2) {
+        while (number1 != number2) {
+            if (number1 > number2) {
+                number1 = number1 - number2;
+            } else {
+                number2 = number2 - number1;
+            }
+        }
+        return number1;
     }
 }
